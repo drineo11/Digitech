@@ -21,7 +21,7 @@ const Produtos=({navigation, route}) => {
 	const [selecionados, setSelecionados]=useState([]);
 	
 	useEffect(() => {!clear ? (!update ? fetchProdutos() : (fetchProdutos(), setSelecionados(update), setUpdate(false))) : limpar()}, []);
-
+	
 	const fetchProdutos = async () => {
 		const resp = await fetch("https://demo6799411.mockable.io/produtos");
 		const data = await resp.json();
